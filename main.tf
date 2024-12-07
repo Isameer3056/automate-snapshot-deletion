@@ -1,5 +1,5 @@
 terraform {
-    required_version = ">=1.10.1"
+    required_version = ">=1.5.6"
     required_providers {
       aws = {
         source = "hashicorp/aws"
@@ -8,9 +8,10 @@ terraform {
     }
     backend "s3" {
         bucket = "superuser-terraform-state-bucket"
-        key    = "delete-inactive-snapshots/terraform.tfstate"
+        key    = "lockid" #"delete-inactive-snapshots/terraform.tfstate"
         region = "us-east-1"
         dynamodb_table = "superuser-terraform-state-locking"
+    
     }
 }
 provider "aws" {
@@ -74,7 +75,7 @@ resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
   
 }
 
-data "archive_file" "lambda_zip"{
+data "archive_file" "lambda_zip" {
     type = "zip"
     source_file = "${path.module}/python/snapshot-delete-script.py"
     output_path = "${path.module}/python/snapshot-delete-script.zip"
