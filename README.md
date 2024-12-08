@@ -1,3 +1,4 @@
+
 # Bid Farewell to Forgotten Snapshots: Use AWS EventBridge, Terraform, and Serverless to Automate Cleanup! 
 
 AWS accounts may eventually amass resources that are no longer required but nevertheless result in expenses. Neglected EBS snapshots that remain after volumes are erased are a typical example. Handling these photos by hand can be expensive and time-consuming. 
@@ -391,3 +392,4 @@ This project could benefit from the following improvements:
 To clean up inactive EBS snapshots, we have developed a completely automated, serverless solution that combines **Python (Boto3)**, **Lambda**, **AWS EventBridge**, and **Terraform**. This configuration encourages a neat, effective AWS environment in addition to lowering cloud expenses. You can be guaranteed that orphaned resources are regularly deleted with scheduled invocations.
 
 Experience the advantages of cloud resource management automation by using this solution on your personal AWS account!
+
