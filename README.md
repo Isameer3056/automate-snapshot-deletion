@@ -153,7 +153,7 @@ An example of an IAM policy
                 "s3:GetObject",
                 "s3:DeleteObject"
             ],
-            "Resource": "arn:aws:s3:::my-terraform-state-bucket/*"
+            "Resource": "arn:aws:s3:::superuser-terraform-state-bucket/*"
         },
         {
             "Effect": "Allow",
@@ -163,7 +163,7 @@ An example of an IAM policy
                 "dynamodb:DeleteItem",
                 "dynamodb:DescribeTable"
             ],
-            "Resource": "arn:aws:dynamodb:us-east-1:123456789012:table/terraform-state-locking"
+            "Resource": "arn:aws:dynamodb:us-east-1:123456789012:table/superuser-terraform-state-locking"
         }
     ]
 }
